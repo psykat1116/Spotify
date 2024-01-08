@@ -6,6 +6,7 @@ import SupabaseProvider from "../../providers/SupabaseProvider";
 import UserProvider from "../../providers/UserProvider";
 import ModelProvider from "../../providers/ModelProvider";
 import ToasterProvider from "../../providers/ToasterProvider";
+import getSongsByUserId from "../../actions/getSongsByUserId";
 
 const figtree = Figtree({ subsets: ["latin"] });
 
@@ -14,11 +15,14 @@ export const metadata: Metadata = {
   description: "Listen To Music For Free.",
 };
 
-export default function RootLayout({
+export const revalidate = 0;
+
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const userSong = await getSongsByUserId();
   return (
     <html lang="en">
       <body className={figtree.className}>
@@ -26,7 +30,7 @@ export default function RootLayout({
         <SupabaseProvider>
           <UserProvider>
             <ModelProvider />
-            <Sidebar>{children}</Sidebar>
+            <Sidebar songs={userSong}>{children}</Sidebar>
           </UserProvider>
         </SupabaseProvider>
       </body>

@@ -24,7 +24,7 @@ const UploadModal = () => {
       image: null,
     },
   });
-  const onChange = () => {
+  const onChange = (open:boolean) => {
     if (!open) {
       reset();
       return uploadModal.onClose();
@@ -41,7 +41,7 @@ const UploadModal = () => {
       }
       const uniqueId = uniqid();
       const { data: songData, error: songError } = await supabaseClient.storage
-        .from("songs")
+        .from("Songs")
         .upload(`song-${values.title}-${uniqueId}`, songFile, {
           cacheControl: "3600",
           upsert: false,
@@ -51,7 +51,7 @@ const UploadModal = () => {
       }
       const { data: imageData, error: imageError } =
         await supabaseClient.storage
-          .from("images")
+          .from("Images")
           .upload(`image-${values.title}-${uniqueId}`, imageFile, {
             cacheControl: "3600",
             upsert: false,
@@ -60,7 +60,7 @@ const UploadModal = () => {
         return toast.error(imageError.message);
       }
       const { error: supabaseError } = await supabaseClient
-        .from("songs")
+        .from("Songs")
         .insert({
           user_id: user.id,
           title: values.title,
@@ -83,6 +83,7 @@ const UploadModal = () => {
       setIsLoading(false);
     }
   };
+
   return (
     <Modal
       title="Upload modal title"
