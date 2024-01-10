@@ -24,7 +24,7 @@ export interface Product {
   active?: boolean;
   name?: string;
   description?: string;
-  images?: string;
+  image?: string;
   metadata?: Stripe.Metadata;
 }
 
@@ -41,6 +41,10 @@ export interface Price {
   trial_period_days?: number | null;
   metadata?: Stripe.Metadata;
   product?: Product;
+}
+
+export interface ProductWithPrice extends Product {
+  prices?: Price[];
 }
 
 export interface SubscriptionDetails {
