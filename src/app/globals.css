@@ -9,3 +9,7 @@ body,
   background-color: rgb(29, 29, 29);
   color-scheme: dark;
 }
+
+::-webkit-scrollbar {
+  width: 0;
+}

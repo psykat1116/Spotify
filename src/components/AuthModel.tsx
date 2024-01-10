@@ -9,7 +9,6 @@ import { useRouter } from "next/navigation";
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import useAuthModal from "../../hooks/useAuthModel";
-import { on } from "events";
 
 const AuthModel = () => {
   const supabaseClient = useSupabaseClient();
@@ -25,8 +24,9 @@ const AuthModel = () => {
   }, [session, router, onClose]);
 
   const onChange = (open: boolean) => {
-    if (open) return;
-    onClose();
+    if (!open) {
+      onClose();
+    }
   };
 
   return (
@@ -39,7 +39,7 @@ const AuthModel = () => {
       <Auth
         theme="dark"
         magicLink
-        providers={["google", "github"]}
+        providers={["github"]}
         supabaseClient={supabaseClient}
         appearance={{
           theme: ThemeSupa,
