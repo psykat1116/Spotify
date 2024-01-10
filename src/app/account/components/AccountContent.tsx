@@ -51,7 +51,9 @@ const AccountContent = () => {
             disabled={loading || isLoading}
             className="w-[300px]"
             onClick={redirectToCustomerPortal}
-          ></Button>
+          >
+            Open Customer Portal
+          </Button>
         </div>
       )}
     </div>
