@@ -13,6 +13,8 @@ const AccountContent = () => {
   const { isLoading, subscription, user } = useUser();
   const [loading, setLoading] = useState(false);
 
+  console.log(subscription);
+
   useEffect(() => {
     if (!isLoading && !user) {
       router.replace("/");
@@ -22,7 +24,7 @@ const AccountContent = () => {
   const redirectToCustomerPortal = async () => {
     setLoading(true);
     try {
-      const { url, error } = await postData({ url: "/api.create-portal-link" });
+      const { url, error } = await postData({ url: "/api/create-portal-link" });
       window.location.assign(url);
     } catch (error: any) {
       toast.error(error.message);
@@ -45,7 +47,7 @@ const AccountContent = () => {
         <div className="flex flex-col gap-y-4">
           <p>
             You are currently on the{" "}
-            <b>{subscription?.prices?.product?.name}</b> Plan
+            <b>{subscription?.prices?.products?.name}</b> Plan
           </p>
           <Button
             disabled={loading || isLoading}
