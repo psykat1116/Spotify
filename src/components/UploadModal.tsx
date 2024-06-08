@@ -24,7 +24,7 @@ const UploadModal = () => {
       image: null,
     },
   });
-  const onChange = (open:boolean) => {
+  const onChange = (open: boolean) => {
     if (!open) {
       reset();
       return uploadModal.onClose();
@@ -86,8 +86,8 @@ const UploadModal = () => {
 
   return (
     <Modal
-      title="Upload modal title"
-      description="Upload modal description"
+      title="Upload New Song"
+      description="Fill In The Details To Add a New Song To The Platform"
       isOpen={uploadModal.isOpen}
       onChange={onChange}
     >
