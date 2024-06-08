@@ -1,5 +1,8 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Important Point
+The Stripe Payment Method Build Here Is Completely On Test Mode.<br/> So, You Can Easily Get A <b>Premium Membership</b> Just By Giving Any <b>Valid Card</b> Details With Paying Any Money.<br/> You Can Use Card Number This Card No <b>`4242 4242 4242 4242`</b> Or If Not Working Use Any Valid Card With A <b>Future Expiry</b> Date, <b>Random CVV</b> and <b/>Valid Address & Name</b> Details. 
+
 ## Cloning The Repository
 
 ```bash
