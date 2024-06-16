@@ -24,6 +24,14 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://spotify-iota-three.vercel.app/",
     siteName: "Spotify Clone",
+    images: [
+      {
+        url: "https://github.com/psykat1116/Spotify/blob/master/public/OpenGraph.png?raw=true",
+        width: 1200,
+        height: 630,
+        alt: "Spotify Clone: Your Ultimate Music Hub",
+      },
+    ],
   },
 };
 
