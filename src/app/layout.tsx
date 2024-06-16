@@ -13,8 +13,18 @@ import getActiveProductsWithPrices from "../../actions/getActiveProductsWithPric
 const figtree = Figtree({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Spotify Clone - The Best Platform For Music Lovers",
-  description: "Listen To Music For Free.",
+  title: "Spotify Clone: Your Ultimate Music Hub",
+  description:
+    "Spotify is a cutting-edge music streaming platform that brings your favorite songs, albums, and artists right to your fingertips. With an extensive library of music from various genres and personalized recommendations, Spotify ensures a seamless listening experience. Create and share playlists, discover new music, and enjoy high-quality audio on any device. Dive into the world of music with Spotify, where your soundtrack is always playing.",
+  openGraph: {
+    title: "Spotify Clone: Your Ultimate Music Hub",
+    description:
+      "Spotify is a cutting-edge music streaming platform that brings your favorite songs, albums, and artists right to your fingertips. With an extensive library of music from various genres and personalized recommendations, Spotify ensures a seamless listening experience. Create and share playlists, discover new music, and enjoy high-quality audio on any device. Dive into the world of music with Spotify, where your soundtrack is always playing.",
+    type: "website",
+    locale: "en_IN",
+    url: "https://spotify-iota-three.vercel.app/",
+    siteName: "Spotify Clone",
+  },
 };
 
 export const revalidate = 0;
@@ -32,9 +42,9 @@ export default async function RootLayout({
         <ToasterProvider />
         <SupabaseProvider>
           <UserProvider>
-            <ModelProvider products={products}/>
+            <ModelProvider products={products} />
             <Sidebar songs={userSong}>{children}</Sidebar>
-            <Player/>
+            <Player />
           </UserProvider>
         </SupabaseProvider>
       </body>
