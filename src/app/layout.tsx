@@ -13,23 +13,29 @@ import getActiveProductsWithPrices from "../../actions/getActiveProductsWithPric
 const figtree = Figtree({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Spotify Clone: Your Ultimate Music Hub",
+  title: {
+    default: "Spotify - Your Ultimate Music Hub",
+    template: `%s | Spotify`,
+  },
   description:
     "Spotify is a cutting-edge music streaming platform that brings your favorite songs, albums, and artists right to your fingertips. With an extensive library of music from various genres and personalized recommendations, Spotify ensures a seamless listening experience. Create and share playlists, discover new music, and enjoy high-quality audio on any device. Dive into the world of music with Spotify, where your soundtrack is always playing.",
   openGraph: {
-    title: "Spotify Clone: Your Ultimate Music Hub",
+    title: {
+      default: "Spotify: Your Ultimate Music Hub",
+      template: `%s | Spotify`,
+    },
     description:
       "Spotify is a cutting-edge music streaming platform that brings your favorite songs, albums, and artists right to your fingertips. With an extensive library of music from various genres and personalized recommendations, Spotify ensures a seamless listening experience. Create and share playlists, discover new music, and enjoy high-quality audio on any device. Dive into the world of music with Spotify, where your soundtrack is always playing.",
     type: "website",
     locale: "en_IN",
     url: "https://spotify-iota-three.vercel.app/",
-    siteName: "Spotify Clone",
+    siteName: "Spotify",
     images: [
       {
         url: "https://github.com/psykat1116/Spotify/blob/master/public/OpenGraph.png?raw=true",
         width: 1200,
         height: 630,
-        alt: "Spotify Clone: Your Ultimate Music Hub",
+        alt: "Spotify: Your Ultimate Music Hub",
       },
     ],
   },
