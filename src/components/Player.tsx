@@ -4,16 +4,6 @@ import usePlayer from "../../hooks/usePlayer";
 import useGetSongById from "../../hooks/useGetSongById";
 import useLoadSongUrl from "../../hooks/useLoadSongUrl";
 import PlayerContent from "./PlayerContent";
-import { type Metadata } from "next";
-
-export async function generateMetadata(): Promise<Metadata> {
-  const player = usePlayer();
-  const { song } = useGetSongById(player.activeId);
-  if (!song) return { title: "" };
-  return {
-    title: song.title,
-  };
-}
 
 const Player = () => {
   const player = usePlayer();
